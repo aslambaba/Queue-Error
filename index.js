@@ -19,7 +19,7 @@ pgClient.connect();
 async function etfSocket() {
   
   const queryResult = await pgClient.query(
-    `SELECT * FROM us."Etf" WHERE "isIpos" = false`
+    `SELECT * FROM us."Etf" WHERE "isIpos" = false limit 5000`
   );
 
   const allTickers = queryResult.rows.map((row) => row.ticker);
